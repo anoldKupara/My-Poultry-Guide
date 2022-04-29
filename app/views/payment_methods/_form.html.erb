@@ -1,22 +1,33 @@
-<%= form_with(model: payment_method, local: true) do |form| %>
-  <% if payment_method.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(payment_method.errors.count, "error") %> prohibited this payment_method from being saved:</h2>
+<div class="row">
+  <div class="col-xl">
+    <div class="card mb-4">
 
-      <ul>
-      <% payment_method.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <div class="card-body">
+        <%= form_with(model: payment_method, local: true) do |form| %>
+          <% if payment_method.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(payment_method.errors.count, "error") %> prohibited this payment_method from being saved:</h2>
+
+              <ul>
+              <% payment_method.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="mb-3">
+            <%= form.label :name, class: "form-label"  %>
+            <%= form.text_field :name, class: "form-control" %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "Create Payment Method", class: "btn btn-primary" %> |
+            <%= link_to 'Show', @payment_method, :class => "btn btn-primary" %> |
+            <%= link_to 'Back' , payment_methods_path, :class => "btn btn-primary"%>
+          </div>
+        <% end %>
+     </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
