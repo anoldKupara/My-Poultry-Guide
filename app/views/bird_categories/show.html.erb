@@ -1,0 +1,21 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bird_category.name %>
+</p>
+
+<p>
+  <strong>Purpose:</strong>
+  <%= @bird_category.purpose %>
+</p>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @bird_category.breed %>
+</p>
+
+<%= link_to 'Edit', edit_bird_category_path(@bird_category) %> |
+<%= link_to 'Back', bird_categories_path %>
+</div>

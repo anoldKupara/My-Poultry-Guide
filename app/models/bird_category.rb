@@ -1,0 +1,2 @@
+class BirdCategory < ApplicationRecord
+end

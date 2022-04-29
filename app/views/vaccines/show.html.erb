@@ -1,0 +1,46 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @vaccine.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @vaccine.description %>
+  </p>
+
+  <p>
+    <strong>Purpose:</strong>
+    <%= @vaccine.purpose %>
+  </p>
+
+  <p>
+    <strong>Alternative:</strong>
+    <%= @vaccine.alternative %>
+  </p>
+
+  <p>
+    <strong>Expiry date:</strong>
+    <%= @vaccine.expiry_date %>
+  </p>
+
+  <p>
+    <strong>Quantity:</strong>
+    <%= @vaccine.quantity %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @vaccine.price %>
+  </p>
+
+  <p>
+    <strong>Currency:</strong>
+    <%= @vaccine.currency.name %>
+  </p>
+
+  <%= link_to 'Edit', edit_vaccine_path(@vaccine) %> |
+  <%= link_to 'Back', vaccines_path %>
+</div>

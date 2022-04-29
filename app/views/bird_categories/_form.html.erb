@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xl">
+    <div class="card mb-4">
+
+      <div class="card-body">
+        <%= form_with(model: bird_category, local: true) do |form| %>
+          <% if bird_category.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(bird_category.errors.count, "error") %> prohibited this bird_category from being saved:</h2>
+
+              <ul>
+              <% bird_category.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="mb-3">
+            <%= form.label :name, class: "form-label" %>
+            <%= form.text_field :name, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :purpose, class: "form-label" %>
+            <%= form.text_field :purpose, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :breed, class: "form-label" %>
+            <%= form.text_field :breed, class: "form-control" %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "Create Bird Category", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+     </div>
+    </div>
+  </div>
+</div>

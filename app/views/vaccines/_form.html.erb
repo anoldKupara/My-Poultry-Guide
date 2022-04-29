@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-xl">
+    <div class="card mb-4">
+
+      <div class="card-body">
+        <%= form_with(model: vaccine, local: true) do |form| %>
+          <% if vaccine.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(vaccine.errors.count, "error") %> prohibited this vaccine from being saved:</h2>
+
+              <ul>
+              <% vaccine.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="mb-3">
+            <%= form.label :name, class: "form-label" %>
+            <%= form.text_field :name, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :description, class: "form-label" %>
+            <%= form.text_field :description, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :purpose, class: "form-label" %>
+            <%= form.text_field :purpose, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :alternative, class: "form-label" %>
+            <%= form.text_field :alternative, class: "form-control" %>
+          </div>
+
+          <div class="field">
+            <%= form.label :expiry_date %>
+            <%= form.date_select :expiry_date %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :quantity, class: "form-label" %>
+            <%= form.text_field :quantity, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :price, class: "form-label" %>
+            <%= form.text_field :price, class: "form-control" %>
+          </div>
+
+         <div class="mb-3">
+            <%= form.label :currency_id %>
+            <%= form.select :currency_id, Currency.all.collect {|c| [c.name, c.id]}, {prompt: "Select Currency"}, class: "form-select form-select-lg" %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "Create Vaccine", class: "btn btn-primary" %> |
+            <%= link_to 'Show', @vaccine, :class => "btn btn-primary" %> |
+            <%= link_to 'Back' , vaccines_path, :class => "btn btn-primary"%>
+          </div>
+        <% end %>
+     </div>
+    </div>
+  </div>
+</div>

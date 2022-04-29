@@ -1,0 +1,19 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+	<% if notice %>
+	<p class="alert alert-success"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+	<p class="alert alert-danger"><%= alert %></p>
+	<% end %>
+
+	<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Settings /</span> Configurations</h4>
+
+	<%= link_to "Projects", projects_path %><br/>
+	<%= link_to "Measuring Units", measuring_units_path %><br/>
+	<%= link_to "Budget Categories", budget_categories_path %><br/>
+	<%= link_to "Expense Categories", expense_categories_path %><br/>
+	<%= link_to "Expense Items", expenses_path %><br/>
+	<%= link_to "Company Divisions", divisions_path %><br/>
+	<%= link_to "Supplier Category", supplier_categories_path %><br/>
+
+</div>

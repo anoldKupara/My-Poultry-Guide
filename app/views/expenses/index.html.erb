@@ -1,0 +1,74 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  
+   <!-- Footer with components -->
+  <section id="component-footer">
+
+    <footer class="footer bg-light">
+      <div class="container-fluid d-flex flex-md-row flex-column justify-content-between align-items-md-center gap-1 container-p-x py-3">
+        <div><strong>Expenses</div>
+        <div>
+          <%= link_to new_expense_path, class: "btn btn-sm btn-outline-primary" do %>
+          <i class="bx bx-log-out-circle"></i> New Expense
+          <% end %>
+        </div>
+      </div>
+    </footer>
+  </section>
+  <!--/ Footer with components -->
+
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="table-responsive text-nowrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Currency</th>
+                <th colspan="3">Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @expenses.each do |expense| %>
+                <tr>
+                  <td><%= expense.name %></td>
+                  <td><%= expense.quantity %></td>
+                  <td><%= expense.price %></td>
+                  <td><%= expense.currency.name %></td>
+                  <td>
+                      <div class="dropdown">
+                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu" style="padding: 3px;">
+                          <%= link_to expense do %>
+                          <i class="bx bx-edit-alt me-1"></i> View
+                          <% end %>
+                          <%= link_to edit_expense_path(expense) do %>
+                          <i class="bx bx-edit-alt me-1"></i> Edit
+                          <% end %>
+                          <%= link_to expense, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                          <i class="bx bx-trash me-1"></i> Delete
+                          <% end %>
+                        </div>
+                      </div>
+                    </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

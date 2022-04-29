@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-xl">
+    <div class="card mb-4">
+
+      <div class="card-body">
+        <%= form_with(model: inventory, local: true) do |form| %>
+          <% if inventory.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+              <ul>
+              <% inventory.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="mb-3">
+            <%= form.label :item_name, class: "form-label" %>
+            <%= form.text_field :item_name, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :purpose, class: "form-label" %>
+            <%= form.text_field :purpose, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :quantity, class: "form-label" %>
+            <%= form.text_field :quantity, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :value, class: "form-label" %>
+            <%= form.text_field :value, class: "form-control" %>
+          </div>
+
+         <div class="mb-3">
+            <%= form.label :currency_id %>
+            <%= form.select :currency_id, Currency.all.collect {|c| [c.name, c.id]}, {prompt: "Select Currency"}, class: "form-select form-select-lg" %>
+          </div>
+
+          <div class="field">
+            <%= form.label :expiry_date %>
+            <%= form.date_select :expiry_date %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "Create Inventory", class: "btn btn-primary" %> |
+            <%= link_to 'Show', @inventory, :class => "btn btn-primary" %> |
+            <%= link_to 'Back' , inventories_path, :class => "btn btn-primary"%>
+          </div>
+        <% end %>
+     </div>
+    </div>
+  </div>
+</div>

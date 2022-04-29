@@ -1,0 +1,41 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @feed.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @feed.description %>
+  </p>
+
+  <p>
+    <strong>Purpose:</strong>
+    <%= @feed.purpose %>
+  </p>
+
+  <p>
+    <strong>Quantity:</strong>
+    <%= @feed.quantity %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @feed.price %>
+  </p>
+
+  <p>
+    <strong>Supplier:</strong>
+    <%= @feed.supplier %>
+  </p>
+
+  <p>
+    <strong>Currency:</strong>
+    <%= @feed.currency.name %>
+  </p>
+
+  <%= link_to 'Edit', edit_feed_path(@feed) %> |
+  <%= link_to 'Back', feeds_path %>
+</div>

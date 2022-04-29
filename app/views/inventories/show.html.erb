@@ -1,0 +1,36 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item name:</strong>
+  <%= @inventory.item_name %>
+</p>
+
+<p>
+  <strong>Purpose:</strong>
+  <%= @inventory.purpose %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @inventory.quantity %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @inventory.value %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @inventory.currency.name %>
+</p>
+
+<p>
+  <strong>Expiry date:</strong>
+  <%= @inventory.expiry_date %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>
+</div>

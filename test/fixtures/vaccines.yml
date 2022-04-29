@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  purpose: MyString
+  alternative: MyString
+  expiry_date: 2022-04-21
+  quantity: MyString
+  price: 9.99
+  currency: one
+
+two:
+  name: MyString
+  description: MyString
+  purpose: MyString
+  alternative: MyString
+  expiry_date: 2022-04-21
+  quantity: MyString
+  price: 9.99
+  currency: two

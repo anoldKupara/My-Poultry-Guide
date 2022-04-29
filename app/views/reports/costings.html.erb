@@ -1,0 +1,61 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+
+  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Expenditure /</span> Purchases</h4>
+
+	<% grand_total = 0 %>
+	<% z = 0 %>
+	<% @expense_categories.each_with_index do |category,i| %>
+		<h2><%= "#{i+=1}. #{category.name}" %></h2>
+		<% z += 1 %>
+		<ul>
+			<% category.expenses.each_with_index do |expense,x| %>
+				<% unless expense.expense_transactions.empty? %>
+				<table>
+					<caption><h3 style="text-align: left;"><%= "#{expense.code} - #{expense.name}" %></h3></caption>
+					<thead>
+						<tr>
+							<th width="5%">Date</th>
+							<th width="5%">Description</th>
+							<th width="10%">Purpose</th>
+							<th width="5%">Qty</th>
+							<th width="5%">Unit Price</th>
+							<th width="5%">Line Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% total_amount = 0 %>
+						<% expense.expense_transactions.each_with_index do |transaction,t| %>
+						<tr>
+							<td width="5%"><%= transaction.transaction_date %></td>
+							<td width="5%"><%= transaction.description %></td>
+							<td width="10%"><%= transaction.purpose %></td>
+							<td width="5%"><%= transaction.quantity.to_i %></td>
+							<td width="5%"><%= transaction.amount %></td>
+							<td width="5%"><%= transaction.line_total %></td>
+						</tr>
+						<% total_amount += transaction.line_total %>
+						<% end %>
+						<tr>
+							<th colspan="5" width="20%">Total</th>
+							<th width="5%"><%= number_to_currency(total_amount, unit: "") %></th>
+						</tr>
+					</tbody>
+				</table>
+				<% grand_total += total_amount %>
+				<% end %>
+			<% end %>
+		</ul>
+	<% end %>
+	<table width="100%">
+		<tr>
+			<th width="86.5%"><h2><%= z+=1 %>. Grand Total</h2></th>
+			<th><h2><%= number_to_currency(grand_total, unit: "") %></h2></th>
+		</tr>
+	</table>
+</div>

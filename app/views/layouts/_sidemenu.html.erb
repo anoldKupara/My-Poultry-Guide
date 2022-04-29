@@ -1,0 +1,124 @@
+  <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1">
+      <!-- Dashboard -->
+      <li class="menu-item active">
+        <% link_to sales_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-home-circle"></i>
+          <div data-i18n="Analytics">Dashboard</div>
+        <% end %>
+      </li>
+
+    <!-- Layouts -->
+    <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Budgets</span>
+      </li>
+      <li class="menu-item">
+        <%= link_to new_budget_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">New Budget</div>
+        <% end %>
+        <%= link_to budgets_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">View Budget</div>
+        <% end %>
+      </li>
+
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Expenses</span>
+      </li>
+      <li class="menu-item">
+        <%= link_to new_expense_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">New Expense</div>
+        <% end %>
+        <%= link_to expenses_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">View Expenses</div>
+        <% end %>
+      </li>
+
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Sales</span>
+      </li>
+      <li class="menu-item">
+        <%= link_to new_sale_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">New Sale</div>
+        <% end %>
+        <%= link_to sales_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">View Sales</div>
+        <% end %>
+      </li>
+
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Feeds</span>
+      </li>
+      <li class="menu-item">
+        <%= link_to new_feed_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">New Feed</div>
+        <% end %>
+        <%= link_to feeds_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">View Feeds</div>
+        <% end %>
+      </li>
+
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Vaccines</span>
+      </li>
+      <li class="menu-item">
+        <%= link_to new_vaccine_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">New Vaccine</div>
+        <% end %>
+        <%= link_to vaccines_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">View Vaccines</div>
+        <% end %>
+      </li>
+
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Inventory</span>
+      </li>
+      <li class="menu-item">
+        <%= link_to new_inventory_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">New Inventory</div>
+        <% end %>
+        <%= link_to inventories_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Without menu">View Inventories</div>
+        <% end %>
+      </li>
+      
+      <!-- Settings -->
+      <li class="menu-header small text-uppercase"><span class="menu-header-text">Settings</span></li>
+
+      <li class="menu-item">
+        <%= link_to currencies_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-crown"></i>
+          <div data-i18n="Boxicons">Currencies</div>
+        <% end %>
+      </li>
+      <li class="menu-item">
+        <%= link_to payment_methods_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-crown"></i>
+          <div data-i18n="Boxicons">Payment Methods</div>
+        <% end %>
+      </li>
+
+      <li class="menu-item">
+        <%= link_to bird_categories_path, class: 'menu-link' do %>
+          <i class="menu-icon tf-icons bx bx-crown"></i>
+          <div data-i18n="Boxicons">Birds Categories</div>
+        <% end %>
+      </li>
+      
+    </ul>
+  </aside>

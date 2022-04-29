@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-xl">
+    <div class="card mb-4">
+
+      <div class="card-body">
+        <%= form_with(model: sale, local: true) do |form| %>
+          <% if sale.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+              <ul>
+              <% sale.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="mb-3">
+            <%= form.label :customer_name, class: "form-label"  %>
+            <%= form.text_field :customer_name, class: "form-control" %>
+          </div>
+
+           <div class="mb-3">
+            <%= form.label :item_purchased, class: "form-label"  %>
+            <%= form.text_field :item_purchased, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :quantity, class: "form-label"  %>
+            <%= form.text_field :quantity, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :price, class: "form-label"  %>
+            <%= form.text_field :price, class: "form-control" %>
+          </div>
+
+           <div class="mb-3">
+              <%= form.label :payment_method_id, class: "form-label"  %>
+              <%= form.select :payment_method_id, PaymentMethod.all.collect {|p| [p.name, p.id]}, {prompt: "Select Payment Method"}, class: "form-select form-select-lg" %>
+            </div>
+
+          <div class="mb-3">
+            <%= form.label :currency_id, class: "form-label"  %>
+            <%= form.select :currency_id, Currency.all.collect {|c| [c.name, c.id]}, {prompt: "Select Currency"}, class: "form-select form-select-lg" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :day, class: "form-label" %>
+            <%= form.date_select :day, class: "form-control" %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "Create Sale", class: "btn btn-primary" %>|
+            <%= link_to 'Show', @sale, :class => "btn btn-primary" %> |
+            <%= link_to 'Back' , sales_path, :class => "btn btn-primary"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

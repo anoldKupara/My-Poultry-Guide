@@ -1,0 +1,41 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Customer name:</strong>
+    <%= @sale.customer_name %>
+  </p>
+
+  <p>
+    <strong>Item purchased:</strong>
+    <%= @sale.item_purchased %>
+  </p>
+
+  <p>
+    <strong>Quantity:</strong>
+    <%= @sale.quantity %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @sale.price %>
+  </p>
+
+  <p>
+    <strong>Payment method:</strong>
+    <%= @sale.payment_method.name %>
+  </p>
+
+  <p>
+    <strong>Currency:</strong>
+    <%= @sale.currency.name %>
+  </p>
+
+  <p>
+    <strong>Day:</strong>
+    <%= @sale.day %>
+  </p>
+
+  <%= link_to 'Edit', edit_sale_path(@sale) %> |
+  <%= link_to 'Back', sales_path %>
+</div>
